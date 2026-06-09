@@ -66,6 +66,14 @@ The pagination component uses an **ellipsis-based window strategy** — it alway
 
 I implemented three UI states beyond the happy path: **skeleton loaders** (structural wireframes that mirror the exact card layout), an **error state** with a retry button, and an **empty state** with a helpful message.
 
+### Sidebar Navigation
+
+The dashboard features a **sidebar with three menu items**: Dashboard (active), Transactions (enabled placeholder), and Reports (disabled). The sidebar uses a gold left-border accent on the active item.
+
+The Transactions page is intentionally a placeholder — its purpose is to demonstrate TanStack Query's **stale-while-revalidate caching**. When you navigate from Dashboard → Transactions → back to Dashboard, the products load **instantly from cache** while TanStack Query silently refetches fresh data in the background. The UI updates seamlessly when the new data arrives, with no loading spinners or layout shifts. This means the user only sees skeleton loaders on the very first visit or after a hard refresh or when searching — all subsequent navigations feel instant.
+
+The sidebar is also **fully responsive**: on mobile, it collapses behind a floating action button, and on desktop (lg+) it's always visible.
+
 ### Search (Part 4)
 
 Search uses the DummyJSON `/products/search?q=query` endpoint for **server-side, case-insensitive filtering**. I didn't do client-side filtering because it's not viable with large datasets.
@@ -107,14 +115,18 @@ src/
 │   ├── layout.tsx           # Root layout with font loading + providers
 │   ├── page.tsx             # Login page
 │   └── dashboard/
-│       ├── layout.tsx       # Auth guard wrapper
-│       └── page.tsx         # Product listing + search + modal
+│       ├── layout.tsx       # Auth guard + sidebar wrapper
+│       ├── page.tsx         # Product listing + search + modal
+│       └── transactions/
+│           └── page.tsx     # Placeholder (demonstrates SWR caching)
 ├── components/
 │   ├── auth/
 │   │   ├── auth-guard.tsx   # Route protection
 │   │   └── login-form.tsx   # Login form with validation
 │   ├── dashboard/
-│   │   └── dashboard-header.tsx  # Top bar with user info + theme toggle + logout
+│   │   ├── dashboard-header.tsx  # Top bar with user info + theme toggle + logout
+│   │   ├── logout-modal.tsx      # Logout confirmation modal
+│   │   └── sidebar.tsx           # Sidebar navigation
 │   ├── products/
 │   │   ├── product-card.tsx        # Memoised product card
 │   │   ├── product-detail-modal.tsx # Native <dialog> modal
@@ -175,6 +187,7 @@ src/
 - [x] Product Details Modal (native `<dialog>`)
 - [x] TanStack Query integration (queries, mutations, cache keys, staleTime/gcTime)
 - [ ] Redux integration (intentionally skipped — Context + TanStack Query covers the use case)
-- [x] Responsive design (1 → 2 → 3 → 4 column grid)
+- [x] Responsive design (1 → 2 → 3 → 4 column grid + responsive sidebar)
 - [x] Dark mode (class-based toggle, CSS variable theming, localStorage persistence)
 - [x] Skeleton loaders (structural wireframes matching card layout)
+- [x] Sidebar navigation with background refetch (stale-while-revalidate)
