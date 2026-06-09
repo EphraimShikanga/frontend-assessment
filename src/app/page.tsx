@@ -51,7 +51,7 @@ export default function LoginPage() {
 
       {/* ── Right: Login form ── */}
       <div className="flex w-full flex-col items-center justify-center bg-white px-6 py-12 lg:w-1/2">
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md rounded-2xl border border-[#00000029] p-8 shadow-lg shadow-black/25">
           {/* Decorative leaves */}
           <div className="mb-2 flex justify-end">
             <Image
@@ -66,13 +66,13 @@ export default function LoginPage() {
 
           {/* Heading */}
           <div className="mb-8">
-            <p className="text-sm font-medium uppercase tracking-widest text-black">
-              Welcome to
+            <p className="text-[20px] font-bold text-black">
+              WELCOME TO
             </p>
             <h1 className="mt-1 text-3xl font-bold leading-tight text-primary-green sm:text-4xl">
-              Co-op Bank
+              Inua Mkulima -
               <br />
-              Product Dashboard
+              Subsidy Program
             </h1>
           </div>
 
