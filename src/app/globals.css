@@ -1,0 +1,184 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Co-operative Bank of Kenya — Brand Design System Guessed atleast
+   ============================================================
+   Architecture:
+     1. `:root` / `.dark` define raw CSS variables for each mode.
+     2. `@theme inline` maps those variables into Tailwind utilities
+        via `var()`, so classes like `bg-surface` automatically resolve
+        to the correct value for the active mode — zero `dark:` needed.
+   ============================================================ */
+
+/* ── Light mode (default) ── */
+:root {
+  --color-background: #FFFFFF;
+  --color-foreground: #1A1F1B;
+
+  --color-surface: #F0F5EE;
+  --color-surface-elevated: #FFFFFF;
+
+  --color-border: #D4D8D4;
+  --color-border-muted: #E9EBE9;
+
+  /* Semantic text */
+  --color-text-primary: #1A1F1B;
+  --color-text-secondary: #586058;
+  --color-text-muted: #8E958D;
+
+  /* Brand-contextual surfaces */
+  --color-brand-text: #1B5E3B;
+  --color-brand-text-hover: #4CAF50;
+  --color-brand-surface: #E8F5E9;
+
+  /* Accent badge */
+  --color-badge-bg: #F2F5D5;
+  --color-badge-text: #6B7A2A;
+
+  /* Interactive */
+  --color-interactive-hover: rgba(0, 0, 0, 0.04);
+
+  /* Skeleton */
+  --color-skeleton: #E9EBE9;
+  --color-skeleton-icon: #B3B8B2;
+}
+
+/* ── Dark mode ── */
+.dark {
+  --color-background: #0C0F0D;
+  --color-foreground: #E9EBE9;
+
+  --color-surface: #1A1F1B;
+  --color-surface-elevated: #2D332E;
+
+  --color-border: #3F4740;
+  --color-border-muted: #2D332E;
+
+  --color-text-primary: #E9EBE9;
+  --color-text-secondary: #B3B8B2;
+  --color-text-muted: #71796F;
+
+  --color-brand-text: #6BBF59;
+  --color-brand-text-hover: #A5D6A7;
+  --color-brand-surface: rgba(27, 94, 59, 0.2);
+
+  --color-badge-bg: rgba(107, 122, 42, 0.2);
+  --color-badge-text: #D4DB7A;
+
+  --color-interactive-hover: rgba(255, 255, 255, 0.06);
+
+  --color-skeleton: #2D332E;
+  --color-skeleton-icon: #3F4740;
+}
+
+/* ── Map CSS variables to Tailwind utilities via @theme inline ── */
+@theme inline {
+  /* Brand palette (static — same in both modes) */
+  --color-coop-900: #0D3B22;
+  --color-coop-800: #14532D;
+  --color-coop-700: #1B5E3B;
+  --color-coop-600: #22764A;
+  --color-coop-500: #2D8F5C;
+  --color-coop-400: #4CAF50;
+  --color-coop-300: #6BBF59;
+  --color-coop-200: #A5D6A7;
+  --color-coop-100: #C8E6C9;
+  --color-coop-50: #E8F5E9;
+
+  /* Accent (static) */
+  --color-accent-700: #6B7A2A;
+  --color-accent-600: #8A9A35;
+  --color-accent-500: #A8B545;
+  --color-accent-400: #BFC95E;
+  --color-accent-300: #D4DB7A;
+  --color-accent-200: #E6ECAB;
+  --color-accent-100: #F2F5D5;
+  --color-accent-50: #FAFBEE;
+
+  /* Neutrals (static) */
+  --color-neutral-950: #0C0F0D;
+  --color-neutral-900: #1A1F1B;
+  --color-neutral-800: #2D332E;
+  --color-neutral-700: #3F4740;
+  --color-neutral-600: #586058;
+  --color-neutral-500: #71796F;
+  --color-neutral-400: #8E958D;
+  --color-neutral-300: #B3B8B2;
+  --color-neutral-200: #D4D8D4;
+  --color-neutral-100: #E9EBE9;
+  --color-neutral-50: #F5F6F5;
+
+  /* Semantic status (static) */
+  --color-success: #22764A;
+  --color-warning: #E6A817;
+  --color-error: #DC3545;
+  --color-info: #2D8F5C;
+
+  /* Dynamic tokens — resolved from :root / .dark CSS variables */
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --color-surface: var(--color-surface);
+  --color-surface-elevated: var(--color-surface-elevated);
+  --color-border: var(--color-border);
+  --color-border-muted: var(--color-border-muted);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+
+  --color-brand-text: var(--color-brand-text);
+  --color-brand-text-hover: var(--color-brand-text-hover);
+  --color-brand-surface: var(--color-brand-surface);
+
+  --color-badge-bg: var(--color-badge-bg);
+  --color-badge-text: var(--color-badge-text);
+
+  --color-interactive-hover: var(--color-interactive-hover);
+
+  --color-skeleton: var(--color-skeleton);
+  --color-skeleton-icon: var(--color-skeleton-icon);
+
+  /* Typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ── Base resets ── */
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Native dialog animation ── */
+dialog[open] {
+  animation: dialog-in 200ms ease-out;
+}
+
+dialog::backdrop {
+  animation: backdrop-in 200ms ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Hide native search clear button — we render our own */
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
