@@ -10,7 +10,7 @@ A frontend assessment for Co-operative Bank of Kenya. An authenticated product d
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/frontend-assessment.git
+git clone https://github.com/EphraimShikanga/frontend-assessment.git
 cd frontend-assessment
 
 # 2. Install dependencies
