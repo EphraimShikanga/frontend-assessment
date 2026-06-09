@@ -1,5 +1,6 @@
 "use client";
 
+import { useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -31,6 +32,13 @@ interface SidebarProps {
  */
 export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
+
+  /** Only close the sidebar on mobile — on desktop it stays open. */
+  const handleNavClick = useCallback(() => {
+    if (typeof window !== "undefined" && window.innerWidth < 1024) {
+      onClose();
+    }
+  }, [onClose]);
 
   return (
     <>
@@ -76,7 +84,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={onClose}
+                onClick={handleNavClick}
                 className={`
                   flex h-12 items-center border-l-4 px-6 text-sm font-medium
                   transition-colors duration-150

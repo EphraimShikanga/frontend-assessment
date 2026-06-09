@@ -81,21 +81,21 @@ export default function DashboardHeader({ onToggleSidebar }: DashboardHeaderProp
             <button
               onClick={() => setShowLogoutModal(true)}
               className="
-                flex h-9 items-center gap-2 rounded-lg border border-white/40
-                px-3.5 text-sm font-medium text-white
+                inline-flex h-9 items-center justify-center gap-2 rounded-lg
+                border border-white/40 px-3.5 text-sm font-medium leading-none text-white
                 transition-colors duration-150
                 hover:border-white hover:bg-white/10
-                focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white
+                focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white items-center
               "
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logout/sign-out.svg"
                 alt=""
-                className="h-4 w-4 brightness-0 invert"
+                className="h-6 w-6 shrink-0 align-bottom brightness-0 invert"
                 aria-hidden="true"
               />
-              Logout
+              <span>Logout</span>
             </button>
           </div>
         </div>

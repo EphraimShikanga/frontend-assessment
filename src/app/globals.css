@@ -67,8 +67,8 @@
 
   --color-interactive-hover: rgba(255, 255, 255, 0.06);
 
-  --color-skeleton: #2D332E;
-  --color-skeleton-icon: #3F4740;
+  --color-skeleton: #4A524B;
+  --color-skeleton-icon: #6B736A;
 }
 
 /* ── Map CSS variables to Tailwind utilities via @theme inline ── */

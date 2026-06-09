@@ -50,9 +50,9 @@ export default function LogoutModal({
         backdrop:bg-black/40 backdrop:backdrop-blur-sm
       "
     >
-      <div className="w-[min(28rem,90vw)] rounded-2xl bg-white p-8 font-poppins shadow-2xl">
+      <div className="w-[min(28rem,90vw)] rounded-2xl bg-surface-elevated p-8 font-poppins shadow-2xl">
         {/* Title */}
-        <h2 className="text-center text-xl font-bold text-black">
+        <h2 className="text-center text-xl font-bold text-text-primary">
           Log Out?
         </h2>
 
@@ -68,7 +68,7 @@ export default function LogoutModal({
         </div>
 
         {/* Message */}
-        <p className="mb-8 text-center text-sm text-gray">
+        <p className="mb-8 text-center text-sm text-text-muted">
           Are you sure you want to log out?
         </p>
 
@@ -79,10 +79,10 @@ export default function LogoutModal({
             onClick={onClose}
             className="
               flex h-12 flex-1 items-center justify-center rounded-lg
-              border-2 border-black text-base font-semibold text-black
+              border-2 border-text-primary text-base font-semibold text-text-primary
               transition-colors duration-150
-              hover:bg-black/5
-              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black
+              hover:bg-interactive-hover
+              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-primary
             "
           >
             Back
@@ -92,10 +92,10 @@ export default function LogoutModal({
             onClick={onConfirm}
             className="
               flex h-12 flex-1 items-center justify-center rounded-lg
-              bg-black text-base font-semibold text-white
+              bg-text-primary text-base font-semibold text-background
               transition-colors duration-150
-              hover:bg-black/85
-              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black
+              hover:opacity-85
+              focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-primary
             "
           >
             Yes, log out

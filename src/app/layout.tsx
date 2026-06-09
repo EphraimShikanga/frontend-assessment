@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Co-op Bank | Product Dashboard",
   description:
     "Co-operative Bank of Kenya — Authenticated product management dashboard.",
+  icons: {
+    icon: "/login/logo.svg",
+  },
 };
 
 export default function RootLayout({

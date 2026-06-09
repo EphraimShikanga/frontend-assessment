@@ -136,8 +136,7 @@ src/
 │   │   └── products-grid.tsx       # Responsive grid layout
 │   ├── ui/
 │   │   ├── alert-banner.tsx   # Dismissable error banner
-│   │   ├── button.tsx         # Primary button with loading state
-│   │   ├── input-field.tsx    # Reusable input with label + error
+│   │   ├── input-field.tsx    # Reusable input with label + error + variants
 │   │   ├── pagination.tsx     # Ellipsis-based pagination
 │   │   ├── search-input.tsx   # Search with clear + spinner
 │   │   └── theme-toggle.tsx   # Dark mode toggle button
