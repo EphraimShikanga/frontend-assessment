@@ -76,11 +76,6 @@ export default function LoginPage() {
             </h1>
           </div>
 
-          {/* Subtitle */}
-          <p className="mb-6 text-sm text-gray">
-            Enter your credentials to continue
-          </p>
-
           {/* Form */}
           <LoginForm />
 
