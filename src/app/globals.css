@@ -138,9 +138,16 @@
   --color-skeleton: var(--color-skeleton);
   --color-skeleton-icon: var(--color-skeleton-icon);
 
+
+  /* Login-specific colors */
+  --color-gold: #E8B40A;
+  --color-gray: #707070;
+  --color-primary-green: #009438;
+
   /* Typography */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
 }
 
 /* ── Base resets ── */
